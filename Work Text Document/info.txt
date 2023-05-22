@@ -1,13 +1,19 @@
+1.Question: input filed post request name
 
+Route::post('/name',[BookController::class,'createName']);
 
     function createName( Request $request){
    
-        $name=$request->get('name');
+        $name=$request->input('name');
     
         return "Name={$name}";
     }
+
+
     
-    // header code for userAgent
+
+2.Quesition: header code for userAgent
+Route::post('/UserAgent',[BookController::class,'userAgent']);
 
     function userAgent(Request $request){
 
@@ -19,7 +25,10 @@
 
 
 
-    //  create  Json Response File 
+
+  3.Question:  create  Json Response File 
+
+Route::get('/response',[BookController::class,'CreateJson']);
 
     function CreateJson(){
 
@@ -38,8 +47,9 @@
     }
 
 
-    // file uploaded 
+   4.Quesition: file uploaded 
 
+Route::post('/upload',[BookController::class,'photo']);
     function photo(Request $request){
 
         if($request->hasFile('avatar')){
@@ -62,7 +72,9 @@
         }
 
 
-    // cookie 
+    5.Quesition: cookie rememberToken
+
+Route::post('/Cookie',[BookController::class,'rememberToken']);
 
     function rememberToken(Request $request){
 
@@ -77,7 +89,12 @@
 
     }
 
-    // query parameter code
+
+
+
+
+   6.Quesition: query parameter code
+    Route::get('/page',[BookController::class,'page']);
 
     function page(Request $request){
 
@@ -93,7 +110,8 @@
 
 
 
-    // email input post in route
+    7.Question: email input post in route
+    Route::post('/submit',[BookController::class,'createPost']);
 
     function createPost(Request $request){
 
